@@ -87,8 +87,10 @@
       <if test="eventType == 'update'">
         , ASSIGNEE_ = #{taskAssignee, jdbcType=VARCHAR}
         , TASK_ID_ = #{taskId, jdbcType=VARCHAR}
+        , CALL_PROC_INST_ID_ = #{calledProcessInstanceId, jdbcType=VARCHAR}
       </if>
       <if test="endTime!=null">
+        , CALL_PROC_INST_ID_ = #{calledProcessInstanceId, jdbcType=VARCHAR}
         , END_TIME_ = #{endTime, jdbcType=TIMESTAMP}
         , DURATION_ = #{durationInMillis, jdbcType=BIGINT}
         , ACT_INST_STATE_ = #{activityInstanceState, jdbcType=INTEGER}
